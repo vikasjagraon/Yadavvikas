@@ -25,7 +25,6 @@ body{
   overflow-x:hidden;
   cursor:crosshair;
 }
-/* custom cursor heart */
 body::after{
   content:'♥';
   position:fixed;
@@ -39,8 +38,6 @@ body::after{
   transition:left 0.05s,top 0.05s;
   opacity:0.7;
 }
-
-/* ── SECTIONS ── */
 section{
   min-height:100vh;
   scroll-snap-align:start;
@@ -51,17 +48,12 @@ section{
   justify-content:center;
   overflow:hidden;
 }
-
-/* ─────────────────────────────────
-   SECTION 1 — OPENING
-───────────────────────────────── */
 #s1{
   background: radial-gradient(ellipse 80% 80% at 50% 60%, #2a0e1e 0%, #0e0408 100%);
 }
 .stars{position:absolute;inset:0;pointer-events:none}
 .star{position:absolute;border-radius:50%;background:#fff;animation:twinkle var(--d,3s) var(--del,0s) ease-in-out infinite}
 @keyframes twinkle{0%,100%{opacity:0.1;transform:scale(1)}50%{opacity:0.9;transform:scale(1.4)}}
-
 .s1-content{position:relative;z-index:2;text-align:center;padding:40px 24px}
 .monogram{
   font-family:'Cormorant Garamond',serif;
@@ -119,9 +111,6 @@ section{
 .scroll-arrow{width:1px;height:40px;background:linear-gradient(to bottom, transparent, var(--gold));animation:arrowBob 1.5s ease-in-out infinite}
 @keyframes arrowBob{0%,100%{transform:scaleY(1);opacity:0.5}50%{transform:scaleY(1.2);opacity:1}}
 
-/* ─────────────────────────────────
-   SECTION 2 — PHOTO FRAMES
-───────────────────────────────── */
 #s2{background:var(--parch)}
 .s2-bg-text{
   position:absolute;
@@ -152,7 +141,6 @@ section{
   line-height:1.2;
   margin-bottom:40px;
 }
-
 .frames-grid{
   display:grid;
   grid-template-columns:1fr 1fr 1fr;
@@ -163,13 +151,11 @@ section{
   position:relative;
   z-index:2;
 }
-/* featured left frame spans 2 rows */
 .frame{
   position:relative;
   border-radius:4px;
   overflow:hidden;
   cursor:pointer;
-  group:true;
 }
 .frame.tall{ grid-row:span 2; }
 .frame-inner{
@@ -192,35 +178,17 @@ section{
   transition:transform 0.5s ease;
 }
 .frame:hover .frame-inner img{transform:scale(1.06)}
-
-.frame-upload{
-  position:absolute;inset:0;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  gap:10px;
-  background:linear-gradient(135deg,rgba(250,235,215,0.95),rgba(244,208,216,0.95));
-  transition:background 0.3s;
-  cursor:pointer;
-}
-.frame-upload:hover{background:linear-gradient(135deg,rgba(244,208,216,0.99),rgba(240,200,210,0.99))}
-.frame-upload svg{opacity:0.4;transition:opacity 0.3s;width:36px;height:36px}
-.frame-upload:hover svg{opacity:0.8}
-.frame-upload p{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--rose);opacity:0.6}
 .frame-caption{
   position:absolute;bottom:0;left:0;right:0;
   padding:20px 14px 12px;
   background:linear-gradient(to top,rgba(28,10,20,0.7),transparent);
-  transform:translateY(100%);
-  transition:transform 0.35s ease;
+  transform:translateY(0);
   text-align:center;
 }
-.frame:hover .frame-caption{transform:translateY(0)}
 .frame-caption span{
   font-size:10px;letter-spacing:3px;text-transform:uppercase;
   color:rgba(255,240,220,0.9);
 }
-/* hidden file inputs */
-.file-input{display:none}
-
 .frame-corner{
   position:absolute;width:16px;height:16px;
   border-color:var(--gold);border-style:solid;
@@ -233,9 +201,6 @@ section{
 .fc-bl{bottom:8px;left:8px;border-width:0 0 1px 1px}
 .fc-br{bottom:8px;right:8px;border-width:0 1px 1px 0}
 
-/* ─────────────────────────────────
-   SECTION 3 — LOVE LETTERS
-───────────────────────────────── */
 #s3{
   background:linear-gradient(160deg,#1c0a14 0%,#2a0e1e 100%);
   padding:80px 24px;
@@ -282,9 +247,6 @@ section{
   letter-spacing:0.3px;
 }
 
-/* ─────────────────────────────────
-   SECTION 4 — SURPRISE / QUIZ
-───────────────────────────────── */
 #s4{background:var(--cream);padding:80px 24px}
 .quiz-wrap{
   max-width:620px;width:100%;
@@ -299,8 +261,7 @@ section{
   position:relative;
   box-shadow:0 4px 40px rgba(28,10,20,0.06);
 }
-.quiz-box::before,
-.quiz-box::after{
+.quiz-box::before,.quiz-box::after{
   content:'';
   position:absolute;
   width:40px;height:40px;
@@ -309,10 +270,8 @@ section{
 }
 .quiz-box::before{top:12px;left:12px;border-width:1px 0 0 1px}
 .quiz-box::after{bottom:12px;right:12px;border-width:0 1px 1px 0}
-
 .q-step{display:none}
 .q-step.active{display:block;animation:fadeIn 0.5s both}
-
 .q-num{font-size:9px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
 .q-text{
   font-family:'Cormorant Garamond',serif;
@@ -331,7 +290,6 @@ section{
   transition:all 0.25s;
 }
 .q-opt:hover,.q-opt.chosen{background:var(--rose);color:#fff;border-color:var(--rose)}
-
 .reveal-msg{
   background:linear-gradient(135deg,#2a0e1e,#1c0a14);
   border-radius:4px;padding:40px 32px;text-align:center;
@@ -362,9 +320,6 @@ section{
   color:rgba(201,151,59,0.6);text-transform:uppercase;
 }
 
-/* ─────────────────────────────────
-   SECTION 5 — RING + COUNTDOWN
-───────────────────────────────── */
 #s5{
   background:radial-gradient(ellipse 100% 80% at 50% 100%,#2a0e1e 0%,#0e0408 100%);
   padding:80px 24px;
@@ -392,7 +347,6 @@ section{
   animation:pulse 2.5s ease-in-out infinite;
 }
 @keyframes pulse{0%,100%{opacity:0.4}50%{opacity:1}}
-
 .cd-label{
   font-size:9px;letter-spacing:6px;text-transform:uppercase;
   color:rgba(200,152,59,0.6);margin-bottom:20px;
@@ -419,9 +373,6 @@ section{
   margin-top:6px;display:block;
 }
 
-/* ─────────────────────────────────
-   SECTION 6 — CLOSING
-───────────────────────────────── */
 #s6{background:var(--parch)}
 .closing{text-align:center;padding:40px 24px;position:relative;z-index:2}
 .big-heart{
@@ -453,9 +404,6 @@ section{
   color:rgba(28,10,20,0.45);line-height:1.8;
 }
 
-/* ─────────────────────────────────
-   NAV DOTS
-───────────────────────────────── */
 .nav-dots{
   position:fixed;right:24px;top:50%;transform:translateY(-50%);
   display:flex;flex-direction:column;gap:10px;z-index:100;
@@ -467,9 +415,6 @@ section{
 }
 .dot.active,.dot:hover{background:var(--gold);transform:scale(1.5)}
 
-/* ─────────────────────────────────
-   BURST LAYER
-───────────────────────────────── */
 #bursts{position:fixed;inset:0;pointer-events:none;z-index:9998}
 .b{
   position:absolute;font-size:20px;
@@ -480,15 +425,8 @@ section{
   100%{transform:translate(var(--tx),var(--ty)) scale(1.3);opacity:0}
 }
 
-/* ─────────────────────────────────
-   UTILS
-───────────────────────────────── */
 @keyframes fadeIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
-
-/* Petal canvas */
 #pc{position:fixed;inset:0;pointer-events:none;z-index:1;opacity:0.6}
-
-/* ── Section wrappers ── */
 .s-inner{position:relative;z-index:2;width:100%;max-width:900px;text-align:center;padding:0 24px}
 </style>
 </head>
@@ -497,7 +435,6 @@ section{
 <canvas id="pc"></canvas>
 <div id="bursts"></div>
 
-<!-- NAV DOTS -->
 <nav class="nav-dots" id="navDots">
   <div class="dot active" onclick="goTo(0)" title="Home"></div>
   <div class="dot" onclick="goTo(1)" title="Photos"></div>
@@ -507,9 +444,7 @@ section{
   <div class="dot" onclick="goTo(5)" title="Always"></div>
 </nav>
 
-<!-- ══════════════════════════════════
-     S1 — OPENING
-══════════════════════════════════ -->
+<!-- S1 — OPENING -->
 <section id="s1">
   <div class="stars" id="stars"></div>
   <div class="s1-content">
@@ -524,107 +459,69 @@ section{
   </div>
 </section>
 
-<!-- ══════════════════════════════════
-     S2 — PHOTO FRAMES
-══════════════════════════════════ -->
+<!-- S2 — PHOTO FRAMES -->
 <section id="s2">
   <p class="s2-bg-text">Memories</p>
   <div class="s-inner" style="max-width:900px">
     <p class="section-label">✦ our moments ✦</p>
     <h2 class="section-heading">Every Picture<br>Tells Our Story</h2>
     <div class="frames-grid">
+
       <!-- Frame 1 — tall featured -->
-      <div class="frame tall" onclick="triggerUpload('f1')">
+      <div class="frame tall">
         <div class="frame-inner">
-          <div class="frame-upload" id="fu1">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#c0415e" stroke-width="1.2" stroke-linecap="round">
-              <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
-              <polyline points="21 15 16 10 5 21"/>
-            </svg>
-            <p>Add Photo</p>
-          </div>
-          <img id="fi1" src="" alt="" style="display:none"/>
+          <img src="photo1.jpg" alt="First Look"/>
         </div>
         <div class="frame-caption"><span>First Look</span></div>
         <div class="frame-corner fc-tl"></div><div class="frame-corner fc-tr"></div>
         <div class="frame-corner fc-bl"></div><div class="frame-corner fc-br"></div>
-        <input type="file" accept="image/*" class="file-input" id="f1" onchange="loadImage(event,'fi1','fu1')">
       </div>
+
       <!-- Frame 2 -->
-      <div class="frame" onclick="triggerUpload('f2')">
+      <div class="frame">
         <div class="frame-inner">
-          <div class="frame-upload" id="fu2">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#c0415e" stroke-width="1.2" stroke-linecap="round">
-              <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
-              <polyline points="21 15 16 10 5 21"/>
-            </svg>
-            <p>Add Photo</p>
-          </div>
-          <img id="fi2" src="" alt="" style="display:none"/>
+          <img src="photo2.jpg" alt="Together"/>
         </div>
         <div class="frame-caption"><span>Together</span></div>
         <div class="frame-corner fc-tl"></div><div class="frame-corner fc-tr"></div>
         <div class="frame-corner fc-bl"></div><div class="frame-corner fc-br"></div>
-        <input type="file" accept="image/*" class="file-input" id="f2" onchange="loadImage(event,'fi2','fu2')">
       </div>
+
       <!-- Frame 3 -->
-      <div class="frame" onclick="triggerUpload('f3')">
+      <div class="frame">
         <div class="frame-inner">
-          <div class="frame-upload" id="fu3">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#c0415e" stroke-width="1.2" stroke-linecap="round">
-              <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
-              <polyline points="21 15 16 10 5 21"/>
-            </svg>
-            <p>Add Photo</p>
-          </div>
-          <img id="fi3" src="" alt="" style="display:none"/>
+          <img src="photo3.jpg" alt="The Proposal"/>
         </div>
         <div class="frame-caption"><span>The Proposal</span></div>
         <div class="frame-corner fc-tl"></div><div class="frame-corner fc-tr"></div>
         <div class="frame-corner fc-bl"></div><div class="frame-corner fc-br"></div>
-        <input type="file" accept="image/*" class="file-input" id="f3" onchange="loadImage(event,'fi3','fu3')">
       </div>
+
       <!-- Frame 4 -->
-      <div class="frame" onclick="triggerUpload('f4')">
+      <div class="frame">
         <div class="frame-inner">
-          <div class="frame-upload" id="fu4">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#c0415e" stroke-width="1.2" stroke-linecap="round">
-              <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
-              <polyline points="21 15 16 10 5 21"/>
-            </svg>
-            <p>Add Photo</p>
-          </div>
-          <img id="fi4" src="" alt="" style="display:none"/>
+          <img src="photo4.jpg" alt="Happiness"/>
         </div>
         <div class="frame-caption"><span>Happiness</span></div>
         <div class="frame-corner fc-tl"></div><div class="frame-corner fc-tr"></div>
         <div class="frame-corner fc-bl"></div><div class="frame-corner fc-br"></div>
-        <input type="file" accept="image/*" class="file-input" id="f4" onchange="loadImage(event,'fi4','fu4')">
       </div>
+
       <!-- Frame 5 -->
-      <div class="frame" onclick="triggerUpload('f5')">
+      <div class="frame">
         <div class="frame-inner">
-          <div class="frame-upload" id="fu5">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#c0415e" stroke-width="1.2" stroke-linecap="round">
-              <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
-              <polyline points="21 15 16 10 5 21"/>
-            </svg>
-            <p>Add Photo</p>
-          </div>
-          <img id="fi5" src="" alt="" style="display:none"/>
+          <img src="photo5.jpg" alt="Always & Forever"/>
         </div>
-        <div class="frame-caption"><span>Always & Forever</span></div>
+        <div class="frame-caption"><span>Always &amp; Forever</span></div>
         <div class="frame-corner fc-tl"></div><div class="frame-corner fc-tr"></div>
         <div class="frame-corner fc-bl"></div><div class="frame-corner fc-br"></div>
-        <input type="file" accept="image/*" class="file-input" id="f5" onchange="loadImage(event,'fi5','fu5')">
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- ══════════════════════════════════
-     S3 — LOVE LETTERS
-══════════════════════════════════ -->
+<!-- S3 — LOVE LETTERS -->
 <section id="s3">
   <div class="s-inner">
     <p class="section-label" style="color:rgba(200,152,59,0.6)">✦ from my heart ✦</p>
@@ -649,15 +546,12 @@ section{
   </div>
 </section>
 
-<!-- ══════════════════════════════════
-     S4 — INTERACTIVE QUIZ
-══════════════════════════════════ -->
+<!-- S4 — INTERACTIVE QUIZ -->
 <section id="s4">
   <div class="s-inner" style="max-width:640px">
     <p class="section-label">✦ a little surprise ✦</p>
     <h2 class="section-heading">How Well Do You<br>Know Our Love?</h2>
     <div class="quiz-box" id="quizBox">
-      <!-- Q1 -->
       <div class="q-step active" id="q1">
         <p class="q-num">Question 01 / 03</p>
         <p class="q-text">Where did we share our very first smile?</p>
@@ -668,7 +562,6 @@ section{
           <button class="q-opt" onclick="nextQ('q1','q2',this)">By Chance</button>
         </div>
       </div>
-      <!-- Q2 -->
       <div class="q-step" id="q2">
         <p class="q-num">Question 02 / 03</p>
         <p class="q-text">What is the one thing I love most about you?</p>
@@ -679,7 +572,6 @@ section{
           <button class="q-opt" onclick="nextQ('q2','q3',this)">Everything</button>
         </div>
       </div>
-      <!-- Q3 -->
       <div class="q-step" id="q3">
         <p class="q-num">Question 03 / 03</p>
         <p class="q-text">If our love were a season, which would it be?</p>
@@ -690,7 +582,6 @@ section{
           <button class="q-opt" onclick="showReveal(this)">Winter — Quiet & Pure</button>
         </div>
       </div>
-      <!-- Reveal -->
       <div class="reveal-msg" id="revealMsg">
         <blockquote>
           You are the poem I never knew how to write, the song I've been humming my whole life without knowing the words.
@@ -702,9 +593,7 @@ section{
   </div>
 </section>
 
-<!-- ══════════════════════════════════
-     S5 — RING + COUNTDOWN
-══════════════════════════════════ -->
+<!-- S5 — RING + COUNTDOWN -->
 <section id="s5">
   <div class="s-inner">
     <div class="ring3d-wrap" onclick="ringBurst(event)" id="ringWrap">
@@ -725,22 +614,16 @@ section{
             <stop offset="0%" stop-color="#b0d8f8"/><stop offset="100%" stop-color="#2060a0"/>
           </radialGradient>
         </defs>
-        <!-- band shadow -->
         <ellipse cx="80" cy="106" rx="45" ry="7" fill="rgba(0,0,0,0.25)"/>
-        <!-- band -->
         <ellipse cx="80" cy="100" rx="46" ry="15" fill="url(#gGold)"/>
         <rect x="34" y="62" width="92" height="38" fill="url(#gGold)"/>
         <ellipse cx="80" cy="62" rx="46" ry="15" fill="url(#gGold2)"/>
-        <!-- band highlight -->
         <ellipse cx="80" cy="60" rx="30" ry="6" fill="rgba(255,255,200,0.18)"/>
-        <!-- diamond base -->
         <polygon points="80,62 104,46 80,55 56,46" fill="#b0d8f0" stroke="#80b8e0" stroke-width="0.5"/>
-        <!-- diamond faces -->
         <polygon points="80,10 104,46 80,55 56,46" fill="url(#gDiam)" stroke="#90c8f0" stroke-width="0.6"/>
         <polygon points="80,10 56,46 62,30" fill="rgba(255,255,255,0.6)"/>
         <polygon points="80,10 104,46 98,30" fill="rgba(180,220,255,0.5)"/>
         <polygon points="80,10 83,22 80,32 77,22" fill="rgba(255,255,255,0.95)"/>
-        <!-- sparkles -->
         <g fill="rgba(255,255,255,0.8)">
           <polygon points="22,28 24,24 26,28 24,32"/><polygon points="136,18 138,14 140,18 138,22"/>
           <polygon points="14,72 16,68 18,72 16,76"/><polygon points="142,55 143,52 144,55 143,58"/>
@@ -758,9 +641,7 @@ section{
   </div>
 </section>
 
-<!-- ══════════════════════════════════
-     S6 — CLOSING
-══════════════════════════════════ -->
+<!-- S6 — CLOSING -->
 <section id="s6">
   <div class="closing">
     <span class="big-heart">♥</span>
@@ -771,13 +652,11 @@ section{
 </section>
 
 <script>
-// ── Cursor ──
 document.addEventListener('mousemove',e=>{
   document.body.style.setProperty('--cx',e.clientX+'px');
   document.body.style.setProperty('--cy',e.clientY+'px');
 });
 
-// ── Stars ──
 const starEl=document.getElementById('stars');
 for(let i=0;i<140;i++){
   const s=document.createElement('div');s.className='star';
@@ -787,7 +666,6 @@ for(let i=0;i<140;i++){
   starEl.appendChild(s);
 }
 
-// ── Petals ──
 const pc=document.getElementById('pc');const pctx=pc.getContext('2d');
 let petals=[];
 function rs(){pc.width=innerWidth;pc.height=innerHeight}
@@ -806,7 +684,6 @@ for(let i=0;i<35;i++){let p=mp();p.y=Math.random()*pc.height;petals.push(p)}
   });requestAnimationFrame(anim);
 })();
 
-// ── Nav dots ──
 const sections=[...document.querySelectorAll('section')];
 const dots=[...document.querySelectorAll('.dot')];
 function goTo(i){sections[i].scrollIntoView({behavior:'smooth'})}
@@ -820,19 +697,6 @@ const obs=new IntersectionObserver(entries=>{
 },{threshold:0.5});
 sections.forEach(s=>obs.observe(s));
 
-// ── Photo upload ──
-function triggerUpload(id){document.getElementById(id).click()}
-function loadImage(e,imgId,uploadId){
-  const f=e.target.files[0];if(!f)return;
-  const r=new FileReader();
-  r.onload=ev=>{
-    const img=document.getElementById(imgId);
-    img.src=ev.target.result;img.style.display='block';
-    document.getElementById(uploadId).style.display='none';
-  };r.readAsDataURL(f);
-}
-
-// ── Quiz ──
 function nextQ(curId,nextId,btn){
   btn.classList.add('chosen');
   setTimeout(()=>{
@@ -852,7 +716,6 @@ function showReveal(btn){
   },500);
 }
 
-// ── Burst ──
 function burst(x,y,n=14){
   const em=['💍','✨','💖','🌸','💫','🌹','💝','🎊','🥂','⭐'];
   const c=document.getElementById('bursts');
@@ -873,8 +736,7 @@ function ringBurst(e){
   [300,600].forEach(t=>setTimeout(()=>burst(r.left+r.width/2,r.top+r.height/2,12),t));
 }
 
-// ── Countdown ──
-const engagedOn=new Date(2026,1,20); // ← UPDATE your date: new Date(YYYY, MM-1, DD)
+const engagedOn=new Date(2026,1,20);
 function tick(){
   const diff=Math.max(0,Date.now()-engagedOn);
   document.getElementById('cdD').textContent=Math.floor(diff/86400000);
